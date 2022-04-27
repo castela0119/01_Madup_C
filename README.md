@@ -49,7 +49,7 @@
 
 주어진 데이터 셋의 칼럼명은 위와 같다.
 
-![Alt test](./src/images/erdv1.png "erd sketch")
+![Alt test](./src/images/erd_v1.png "erd sketch - version 1")
 
 * Output
   ```shell
