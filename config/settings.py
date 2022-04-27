@@ -47,7 +47,7 @@ MIDDLEWARE = [
 	'corsheaders.middleware.CorsMiddleware',    # corsheaders 설정
 ]
 
-ROOT_URLCONF = 'madupTeamProject.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -65,7 +65,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'madupTeamProject.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
