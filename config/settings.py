@@ -33,7 +33,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',  # corsheaders 설정
+
+    # Restframework
     'rest_framework',
+
+    # My apps
+    'advertisers',
+    'products',
 ]
 
 MIDDLEWARE = [
