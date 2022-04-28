@@ -3,12 +3,20 @@ from django.db import models
 from advertisers.models import Client
 
 class Platform(models.Model):
+    """
+    Assignee : 홍은비
+    Reviewer : -
+    """
     class Meta:
         db_table = 'platform'
     
     name = models.CharField(max_length=100)
 
 class ClientPlatform(models.Model):
+    """
+    Assignee : 홍은비
+    Reviewer : -
+    """
     class Meta:
         db_table = 'client_platform'
     
@@ -16,6 +24,10 @@ class ClientPlatform(models.Model):
     platform_id = models.ForeignKey(Platform, on_delete=models.CASCADE)
 
 class Ads(models.Model):
+    """
+    Assignee : 홍은비
+    Reviewer : -
+    """
     class Meta:
         db_table = 'ads'
 

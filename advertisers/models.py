@@ -1,8 +1,10 @@
 from django.db import models
 
-# Create your models here.
-
 class Client(models.Model):
+    """
+    Assignee : 홍은비
+    Reviewer : -
+    """
     class Meta:
         db_table = 'client'
 
