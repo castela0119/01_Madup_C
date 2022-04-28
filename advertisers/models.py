@@ -3,7 +3,7 @@ from django.db import models
 class Client(models.Model):
     """
     Assignee : 홍은비
-    Reviewer : -
+    Reviewer : 장우경
     """
     class Meta:
         db_table = 'client'
