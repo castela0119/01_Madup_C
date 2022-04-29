@@ -2,15 +2,14 @@ import os
 import csv
 import django
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings") 
+django.setup()
+
 from advertisers.models import Client
 from products.models import Ads
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings") 
-django.setup()
-
 CSV_PATH = './Madup_Wanted_Data_set.csv'
-
 
 def insert_client():
     """
@@ -20,10 +19,16 @@ def insert_client():
     with open(CSV_PATH, newline='') as csvfile:
         rows = csv.DictReader(csvfile)
 
-        for row in rows:
-            Client.objects.create(
-                client_number = row['advertiser'],
-            )
+        client_list = []
+        
+        unq = set(list(map(lambda x: x.get('advertiser'), rows)))
+        for row in unq:
+            client_list.append(Client(
+                client_number = row
+            ))
+
+        Client.objects.bulk_create(client_list)
+        
         print('CLIENT DATA UPLOADED SUCCESSFULY!')
 
 
@@ -33,29 +38,28 @@ def insert_ads():
     Reviewer : 장우경, 홍은비
     """
     with open(CSV_PATH, newline='') as csvfile:
-        rows = csv.DictReader(csvfile)        
-        id = 0    
-        for row in rows: 
-            # print(row)
+        rows = csv.DictReader(csvfile)
+        ads_list = []
 
+        for row in rows:
             date = row['date']
-            date = date.replace('.', '-')
-
-            id += 1
-
-            client = Client.objects.filter(id=id).values()
-
-            Ads.objects.create (
-                client_id = client[0]['id'],
-                platform = row['media'],
-                date = date,
-                cost = row['cost'],
-                impression = row['impression'],
-                click = row['click'],
-                conversion = row['conversion'],
-                cv = row['cv'],
+            
+            ads_list.append(
+                Ads(
+                    client = Client.objects.get(client_number=row['advertiser']),
+                    platform = row['media'],
+                    date = date.replace('.', '-'),
+                    cost = row['cost'],
+                    impression = row['impression'],
+                    click = row['click'],
+                    conversion = row['conversion'],
+                    cv = row['cv'],
+                )
             )
+        print(len(ads_list))            
+        Ads.objects.bulk_create(ads_list)
         print('ADs DATA UPLOADED SUCCESSFULY!')
 
-insert_client()
-insert_ads()
+
+# insert_client()
+# insert_ads()
