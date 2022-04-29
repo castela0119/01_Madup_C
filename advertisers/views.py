@@ -7,7 +7,7 @@ from .serializers import ClientDetailSerializer, ClientSerializer
 
 class ClientView(generics.CreateAPIView):
     # Assignee : 장우경
-    # Reviewer : -
+    # Reviewer : 진병수
     def post(self, request):
         serializer = ClientSerializer(data=request.data)
 
@@ -27,7 +27,7 @@ class ClientView(generics.CreateAPIView):
 
 class ClientListView(generics.ListAPIView):
     # Assignee : 장우경
-    # Reviewer : -
+    # Reviewer : 
     def get(self, request):
         clients = Client.objects.all()
         serializers = ClientSerializer(clients, many=True)
