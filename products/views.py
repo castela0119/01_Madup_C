@@ -12,7 +12,7 @@ class AdsAPIView(APIView):
     def get(self, request):
         """
         Assignee : 홍은비
-        Reviewer : -
+        Reviewer : 장우경, 진병수
         """
         client_number = request.GET.get('advertiser', None)
 
@@ -51,7 +51,7 @@ class AdsAPIView(APIView):
             }
 
 
-        return Response(final_report)
+        return Response(final_report, status=200)
 
 
 
