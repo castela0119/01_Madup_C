@@ -2,14 +2,12 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 
 from .models import Client
-from .serializers import ClientSerializer
+from .serializers import ClientDetailSerializer, ClientSerializer
 
 
 class ClientView(generics.CreateAPIView):
-    """
-    Assignee : 장우경
-    Reviewer : -
-    """
+    # Assignee : 장우경
+    # Reviewer : -
     def post(self, request):
         serializer = ClientSerializer(data=request.data)
 
@@ -26,9 +24,19 @@ class ClientView(generics.CreateAPIView):
         )
         return Response(serializer.data, status = status.HTTP_201_CREATED)
 
+
 class ClientListView(generics.ListAPIView):
+    # Assignee : 장우경
+    # Reviewer : -
     def get(self, request):
         clients = Client.objects.all()
         serializers = ClientSerializer(clients, many=True)
     
         return Response(serializers.data, status = status.HTTP_200_OK)
+
+
+class ClientDetailView(generics.RetrieveUpdateDestroyAPIView):
+    # Assignee : 장우경
+    # Reviewer : 홍은비
+    queryset = Client.objects.all()
+    serializer_class = ClientDetailSerializer
