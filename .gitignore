@@ -422,4 +422,16 @@ zsdoc/data
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode,vim,macos,linux,zsh,windows
 
+# dual IDE 사용으로 추가
+.idea
+
+# 보안용(서류, 보안 코드 등)
+*.csv
+*.pdf
+*.json
+
+# 설정 다름으로 발생할 코드 conflict 방지용
+config/settings.py
 my_settings.py
+*/migrations/*
+*.sqlite3
