@@ -53,10 +53,13 @@
   주어진 데이터 셋의 칼럼명은 위와 같다.
 
   [simple analytics report](./src/reports/analytics_day1.md)를 참고하면, load 기준으로 부여된 index [78, 840, 940, 942, 24, 25, 891, 149, 191, 68840]가 중복됨을 확인할 수 있다. 이는 migration을 할 때 염두해야 할 내용이다.
-  
+
+---
 * ERD
+
   ![Alt test](./src/images/erd_v3.png "erd sketch - version 2")
 
+---
 * Output
   ```shell
   1{
@@ -77,9 +80,7 @@
   ```
 
 ---
-### Rules
-
-  
+### Rules  
 * Code Conventions
   * class: Upper Camel Case ex) UserSerializer
   * function: snake_case ex) get_user_information()
@@ -103,3 +104,14 @@
 [^kanban]: 통상적으로 backlog, in-progress, peer-review, in-test, done, blocked 로 구분해서 업무를 처리 과정에 따라 확인할 수 있는 보드를 칸반 보드라고 함. 간단하게 협업의 감을 익히기 위해 사용함.ref) [WIKIPEDIA | Kanban Board](https://en.wikipedia.org/wiki/Kanban_board) 
 [^1]: cv([Conversion Value](https://www.investopedia.com/terms/c/conversion-value.asp))
 [^2]: 용어로 설명된 내용은 광고 채널(매체) 별 광고 효용에 대한 지표를 얻을 수 있는 일종의 보고서와 같다. 출력 형태는 소숫점 둘째자리까지 출력(이하 버림)하도록 하고, Output을 참고하면 됨.
+
+---
+### API Documentation
+![post - client 생성](https://user-images.githubusercontent.com/75561289/166091129-e7490e54-aa22-4c95-a15d-b02655f15f25.png)
+![get - client 리스트 조회](https://user-images.githubusercontent.com/75561289/166091138-01113c3f-648c-48e9-a50c-3304df9dd9a8.png)
+![get - client 상세 정보 조회](https://user-images.githubusercontent.com/75561289/166091158-89496710-6352-4944-adf2-425334f4461d.png)
+![put, patch - client 데이터 수정](https://user-images.githubusercontent.com/75561289/166091168-0739c40c-689a-4585-866d-1d6bbec07731.png)
+![delete - client 데이터 삭제](https://user-images.githubusercontent.com/75561289/166091180-f7ec1ca5-ef7b-44b1-81fe-d23dcf4e65ec.png)
+![get - ads 데이터 조회](https://user-images.githubusercontent.com/75561289/166091183-bf9690c4-fddd-44dd-923f-e073621f1f51.png)
+
+[API Documentation Link](https://documenter.getpostman.com/view/18993145/UyrGAtt5)
