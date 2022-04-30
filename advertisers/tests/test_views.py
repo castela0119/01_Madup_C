@@ -12,8 +12,8 @@ from advertisers.views import ClientView, ClientListView, ClientDetailView
 
 class ClientViewTest(APITestCase):
     """
-    Assignee : 김수빈
-    Reviewer : 장우경
+    Assignee : 김수빈, 장우경
+    Reviewer : 장우경, 김수빈
     """
     @classmethod
     def set_up_test_data(self):
@@ -83,8 +83,8 @@ class ClientViewTest(APITestCase):
 
 class ClientListViewTest(APITestCase):
     """
-    Assignee : 김수빈
-    Reviewer : 장우경
+    Assignee : 김수빈, 장우경
+    Reviewer : 장우경, 김수빈
     """
 
     def setUp(self):
@@ -142,30 +142,3 @@ class ClientListViewTest(APITestCase):
             }
         )
         self.assertEqual(response.status_code, 200)
-
-    # def test_get_fail_client_detail(self):
-    #     client = Client()
-    #     response = client.get('/api/v1/client/2')
-    #     self.maxDiff = None
-
-    #     self.assertEqual(
-    #         response.json(),
-    #         {'message': 'NO_CLIENT_FOUND'}
-    #     )
-    #     self.assertEqual(response.status_code, 404)
-
-    # def test_valid_client(self):
-    #     client = self.client
-    #
-    #     self.assertTure(len(client.contact_number.split('-'))==3, "핸드폰 번호의 양식이 맞지 않습니다.")
-            
-
-
-
-    # def get_contact_number(self):
-    #     contact_number = self.client.get(con)
-    #     self.assertEqual()
-
-
-    # def get_fail_case(self):
-    #     self.assertEqual(response.status_code, 404)
