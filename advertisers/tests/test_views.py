@@ -6,7 +6,7 @@ from ..models import Client
 
 class ClientCreationTest(test.APITestCase):
     '''
-    Assignee : 장우경
+    Assignee : 장우경, 김수빈
     Reviewer : 김수빈
     '''
     def setUp(self):
