@@ -96,10 +96,6 @@
 * 테스트 코드, 케이스 작성(assignee: [@AshbeeKim](https://github.com/AshbeeKim))
 
 ---
-
-[//]: <가산점은 현재 고려사항이 아니기에 pass>
-
----
 ### Comments
 [^kanban]: 통상적으로 backlog, in-progress, peer-review, in-test, done, blocked 로 구분해서 업무를 처리 과정에 따라 확인할 수 있는 보드를 칸반 보드라고 함. 간단하게 협업의 감을 익히기 위해 사용함.ref) [WIKIPEDIA | Kanban Board](https://en.wikipedia.org/wiki/Kanban_board) 
 [^1]: cv([Conversion Value](https://www.investopedia.com/terms/c/conversion-value.asp))
