@@ -13,7 +13,7 @@ CSV_PATH = './Madup_Wanted_Data_set.csv'
 
 def insert_client():
     """
-    Assignee : 전병수
+    Assignee : 진병수
     Reviewer : 장우경, 홍은비
     """
     with open(CSV_PATH, newline='') as csvfile:
